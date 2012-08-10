@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var nproxy = require('../');
+
+program
+  .version('0.0.1')
+  .option('-l, --list [list]', 'Specify the responder list file')
+  .option('-p, --port [port]', 'Specify the port nproxy will listen on', parseInt)
+  .parse(process.argv);
+
+nproxy(program.port, {
+  "responderListFilePath": program.list
+});

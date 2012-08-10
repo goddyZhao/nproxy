@@ -1,0 +1,28 @@
+{
+  "name": "nproxy",
+  "version": "0.0.1",
+  "description": "A cli proxy tool specialized in file replacing",
+  "dependencies": {
+    "connect": "*",
+    "commander": "*",
+    "mime": "*",
+    "step": "*"
+  },
+  "main": "./lib/nproxy",
+  "bin": {"nproxy": "./bin/nproxy"},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goddyZhao/nproxy.git"
+  },
+  "keywords": [
+    "node.js",
+    "web",
+    "proxy",
+    "fiddler"
+  ],
+  "author": "Goddy Zhao",
+  "license": "MIT"
+}
