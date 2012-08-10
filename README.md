@@ -55,3 +55,6 @@ A cli proxy tool specialized in file replacing
       }
     ];
 
+## License
+
+nproxy is available under the terms of the MIT License
