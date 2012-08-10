@@ -27,5 +27,11 @@ module.exports = [
         'c.js'
       ]
     }
+  },
+
+  // 4. Map server image directory to local image directory
+  {
+    pattern: 'ui/homepage/img',  // must be a string
+    responder: '/home/goddyzhao/image/' //must be a absolute directory path
   }
 ];
