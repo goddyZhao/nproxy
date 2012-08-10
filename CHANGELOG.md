@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.0.3
+    
+    bug fix
+
 ## v0.0.2
 
     [+] support string pattern
