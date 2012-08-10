@@ -5,7 +5,7 @@ var nproxy = require('../');
 
 program
   .version('0.0.1')
-  .option('-l, --list [list]', 'Specify the responder list file')
+  .option('-l, --list [list]', 'Specify the replace rule file')
   .option('-p, --port [port]', 'Specify the port nproxy will listen on', parseInt)
   .parse(process.argv);
 
