@@ -59,6 +59,10 @@ A cli proxy tool specialized in file replacing
       }
     ];
 
+## Quickly setup rule files for SF project
+
+For UI Developers from SuccessFactors, here is a bonus for you guys. You can use the [sf-transfer](http://github.com/goddyZhao/sf-transfer) tool to transfer the combo xml file to nproxy rule file automatically!
+
 ## License
 
 nproxy is available under the terms of the MIT License
