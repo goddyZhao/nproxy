@@ -59,7 +59,7 @@ A cli proxy tool specialized in file replacing
       }
     ];
 
-You can use the [template file](replace-rule.sample.js) and replace it with your own configurations. 
+You can use the [template file](blob/master/replace-rule.sample.js) and replace it with your own configurations. 
 
 ## Quickly setup rule files for SF project
 
