@@ -8,9 +8,9 @@ A cli proxy tool specialized in file replacing
 
 ## Usage
     
-1. nproxy -l replace_rule.js 
+    nproxy -l replace_rule.js 
 
-2. Setting your browser's proxy to 127.0.0.1:port(8989 by default)
+    Setting your browser's proxy to 127.0.0.1:port(8989 by default)
 
 
 
