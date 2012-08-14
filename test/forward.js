@@ -12,17 +12,45 @@ describe('nproxy', function(){
 
   before(function(done){
     tServer = targetServer();
-    pServer = proxyServer(8989, replaceListPath);
+    pServer = proxyServer(8989, {
+      responderListFilePath: replaceListPath
+    });
     done();
   });
 
   describe('.forward', function(){
-    it('should forward non-replaced css file', function(done){
+    it('should forward non-replaced css file via get', function(done){
       util.request({
-        url: 'http://localhost:3001/request?type=css'
+        url: 'http://localhost:8989/http://localhost:3001/request?type=css',
       }, function(res){
         res.statusCode.should.equal(200);
         res.headers['content-type'].should.equal('text/css');
+        res.headers['server'].should.equal('Target-Server');
+        done();
+      });
+    });
+
+    it('should forward non-replaced post request', function(done){
+      util.request({
+        url: 'http://localhost:8989/http://localhost:3001/request?type=form',
+        method: 'POST',
+        data: '{"username": "goddy", "password": "123"}'
+      }, function(res){
+        res.statusCode.should.equal(301);
+        res.headers['server'].should.equal('Target-Server');
+        done();
+      });
+    });
+
+    it('should forward non-replaced request with cookies', function(done){
+      util.request({
+        url: 'http://localhost:8989/http://localhost:3001/request?type=cookie',
+        method: 'POST',
+        headers: {
+          'Cookie': 'username=goddy;password=123'
+        }
+      }, function(res){
+        res.statusCode.should.equal(200);
         res.headers['server'].should.equal('Target-Server');
         done();
       });

@@ -4,11 +4,20 @@ var proxyServer = require('../');
 var replaceListPath = path.join(__dirname, 'support', 'replace-list.js');
 
 describe('nproxy', function(){
+  var server;
+  before(function(done){
+    server = proxyServer(undefined, replaceListPath);
+    done();
+  });
+
   describe('.listen', function(){
     it('should listen on port 8989 by default', function(done){
-      var server = proxyServer(undefined, replaceListPath);
-      server.close();
       done();
     });
+  });
+
+  after(function(done){
+    server.close();
+    done();
   });
 });

@@ -1,18 +1,34 @@
 var url = require('url');
 var http = require('http');
+var Buffer = require('buffer').Buffer;
 
 var util = {
   request: function(options, callback){
     var parserdUrl = url.parse(options.url);
-    http.request({
+    var requestOptions = {
       host: parserdUrl.hostname,
       port: parserdUrl.port || 80,
-      path: parserdUrl.path,
+      path: parserdUrl.path.substr(1),
       method: options.method || 'GET'
-    }, function(err, res){
+    };
+    var request;
+
+    if(options.headers){
+      requestOptions.headers = options.headers;
+    }
+
+    request = http.request(requestOptions, function(err, res){
       if(err){ callback(err); return; }
       callback(null, res);
-    }).end();
+    });
+
+    if(options.data){
+      request.write(new Buffer(options.data, 'utf-8'));
+    }
+
+    request.end();
+
+
   }
 }
 
