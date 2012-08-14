@@ -1,6 +1,6 @@
 {
   "name": "nproxy",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A cli proxy tool specialized in file replacing",
   "dependencies": {
     "connect": "*",
