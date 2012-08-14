@@ -97,7 +97,6 @@ describe('nproxy', function(){
       }, function(res){
         validateResponseHeader(res, function(err, buffer){
           res.headers['content-type'].should.equal('image/jpeg');
-          console.log(11);
           done();
         });
       })
