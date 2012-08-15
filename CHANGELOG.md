@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.0.5
+
+    Support reapplying rule after it has been modified without restart the proxy    
+
 ## v0.0.4
 
     fix [connection timeout error](https://github.com/goddyZhao/nproxy/issues/4)
