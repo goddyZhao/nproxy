@@ -41,6 +41,10 @@ function createTargetServer(callback){
         }
         res.end();
         break;
+
+      default:
+        res.writeHead(404);
+        res.end();
     }
 
     
