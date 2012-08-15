@@ -1,5 +1,4 @@
 var path = require('path');
-var http = require('http');
 var url = require('url');
 var util = require('./support/util');
 var targetServer = require('./support/target-server');
