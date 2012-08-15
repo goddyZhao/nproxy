@@ -2,6 +2,11 @@
 
 A cli proxy tool specialized in file replacing
 
+## Features
+
+* Support Mac, Linux and Windows  
+* Support both single file and combo file replacing
+
 ## Installation
 
     npm install -g nproxy (node >= v0.8.x is required)
