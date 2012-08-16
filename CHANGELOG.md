@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.0.6
+
+    Support directory mapping with any files
+
 ## v0.0.5
 
     Support reapplying rule after it has been modified without restart the proxy    
