@@ -51,7 +51,6 @@ describe('nproxy', function(){
       .pipe(fs.createWriteStream(replaceListPath))
       .on('close', function(){
         setTimeout(function(){
-          console.log('send request');
           util.request({
             url: 'http://localhost:8989/http://localhost:3001/web/hot-deploy.js'
           }, function(res){
@@ -62,8 +61,6 @@ describe('nproxy', function(){
           });
         },7000);
       });
-
-    
   });
 
   after(function(done){
