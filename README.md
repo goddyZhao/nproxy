@@ -31,6 +31,26 @@ A cli proxy tool specialized in file replacing
       -l, --list [list]  Specify the replace rule file
       -p, --port [port]  Specify the port nproxy will listen on(8989 by default)
 
+### Fiddler Users Should Know
+  
+  Besides writing your replace-rule file and start a nproxy server, there's still
+  _One More Thing_ to do: that is setting up your browser's proxy.
+
+  Say, you have a replace-rule file named _replace.js_ with the following rule:
+  
+    module.exports = [
+      {
+        pattern:   "http://yoursite/app.min.js",
+        responder: "http://devserver/app.js"
+      }
+    ]
+
+  After you start up nproxy server with `nproxy -l replace.js`, (Suppose you're
+  using Safari) click __Preferences__, select __Advanced__ tab, click __Change Settings...__;
+  then check __Web Proxy(HTTP)__, fill in __Web Proxy Server__ fields with 127.0.0.1 and 8989.
+
+  Now, when you try access _http://yoursite/app.min.js_ in Safari, you actually get _http://devserver/app.js_.
+
 ## Template of Replace Rule file(should be a .js file)
 
     module.exports = [
