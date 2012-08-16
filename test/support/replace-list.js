@@ -33,7 +33,7 @@ module.exports = [
   },
 
   {
-    pattern: 'web/img/',
-    responder: path.join(replacedDir, 'img')
+    pattern: 'web/',
+    responder: replacedDir
   }
 ];

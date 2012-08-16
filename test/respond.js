@@ -86,15 +86,24 @@ describe('nproxy', function(){
       });
     });
 
-    it('should map remote dir to local one', function(done){
+    it('should map remote dir to local one with img', function(done){
       util.request({
-        url: 'http://localhost:8989/http://localhost:3001/web/img/avatar.jpg',
-        headers: {
-          referer: 'http://localhost:3001/web/a.css'
-        }
+        url: 'http://localhost:8989/http://localhost:3001/web/img/avatar_dev.jpg'
       }, function(res){
         validateResponseHeader(res, function(err, buffer){
           res.headers['content-type'].should.equal('image/jpeg');
+          done();
+        });
+      })
+    });
+
+     it('should map remote dir to local one with js or css', function(done){
+      util.request({
+        url: 'http://localhost:8989/http://localhost:3001/web/js/hello.js'
+      }, function(res){
+        validateResponseHeader(res, function(err, buffer){
+          res.headers['content-type'].should.equal('application/javascript');
+          buffer.toString().should.equal('hello.js')
           done();
         });
       })

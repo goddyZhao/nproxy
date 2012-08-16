@@ -8,6 +8,10 @@
     "mime": "*",
     "step": "*"
   },
+  "devDependencies":{
+    "mocha": "*",
+    "should": "*"
+  },
   "main": "./lib/nproxy",
   "bin": {"nproxy": "./bin/nproxy"},
   "scripts": {
