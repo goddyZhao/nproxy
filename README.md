@@ -6,6 +6,7 @@ A cli proxy tool specialized in file replacing
 
 * Support Mac, Linux and Windows  
 * Support both single file and combo file replacing
+* Support directory mapping with any files
 
 ## Installation
 
