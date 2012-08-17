@@ -2,6 +2,18 @@
 
 A cli proxy tool specialized in file replacing
 
+## Why nproxy
+
+Maybe you have such question as why nproxy when we have [Fiddler](http://www.fiddler2.com/fiddler2/), [Charles](http://www.charlesproxy.com/), [Rythem](http://www.alloyteam.com/2012/05/web-front-end-tool-rythem-1/) and [Tinyproxy](https://banu.com/tinyproxy/). Yes, there is no doubt that they are all great tools, however they don't meet my requirements:
+
+*. Support Mac, Linux and Windows(especially Mac and Linux)
+*. Support replacing combo files with separated source files
+*. Support directory mapping
+
+This is the main reason why nproxy is here. Besides, nproxy can improve the efficient of my daily development for enterprise-level product with a bunch of complex building processes, which cost me lots of time.
+
+I've written a post named [Nproxy: The Mjolnir for UI Developers](http://en.blog.goddyzhao.me/post/29470818841/nproxy-the-mjolnir-for-ui-developers) to explain my reason for developing nproxy in detail.
+
 ## Features
 
 * Support Mac, Linux and Windows  
@@ -18,6 +30,7 @@ A cli proxy tool specialized in file replacing
 
     Setting your browser's proxy to 127.0.0.1:port(8989 by default)
 
+If you don't know how to set proxy for browser, please read this wiki: [How to set brower's proxy](https://github.com/goddyZhao/nproxy/wiki/How-to-set-browser's-proxy)
 
 
 ### More Options:
@@ -30,26 +43,6 @@ A cli proxy tool specialized in file replacing
       -V, --version      output the version number
       -l, --list [list]  Specify the replace rule file
       -p, --port [port]  Specify the port nproxy will listen on(8989 by default)
-
-### Fiddler Users Should Know
-  
-  Besides writing your replace-rule file and start a nproxy server, there's still
-  _One More Thing_ to do: that is setting up your browser's proxy.
-
-  Say, you have a replace-rule file named _replace.js_ with the following rule:
-  
-    module.exports = [
-      {
-        pattern:   "http://yoursite/app.min.js",
-        responder: "http://devserver/app.js"
-      }
-    ]
-
-  After you start up nproxy server with `nproxy -l replace.js`, (Suppose you're
-  using Safari) click __Preferences__, select __Advanced__ tab, click __Change Settings...__;
-  then check __Web Proxy(HTTP)__, fill in __Web Proxy Server__ fields with 127.0.0.1 and 8989.
-
-  Now, when you try access _http://yoursite/app.min.js_ in Safari, you actually get _http://devserver/app.js_.
 
 ## Template of Replace Rule file(should be a .js file)
 
