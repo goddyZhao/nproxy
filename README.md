@@ -6,9 +6,9 @@ A cli proxy tool specialized in file replacing
 
 Maybe you have such question as why nproxy when we have [Fiddler](http://www.fiddler2.com/fiddler2/), [Charles](http://www.charlesproxy.com/), [Rythem](http://www.alloyteam.com/2012/05/web-front-end-tool-rythem-1/) and [Tinyproxy](https://banu.com/tinyproxy/). Yes, there is no doubt that they are all great tools, however they don't meet my requirements:
 
-*. Support Mac, Linux and Windows(especially Mac and Linux)
-*. Support replacing combo files with separated source files
-*. Support directory mapping
+* Support Mac, Linux and Windows(especially Mac and Linux)
+* Support replacing combo files with separated source files
+* Support directory mapping
 
 This is the main reason why nproxy is here. Besides, nproxy can improve the efficient of my daily development for enterprise-level product with a bunch of complex building processes, which cost me lots of time.
 
