@@ -4,9 +4,14 @@ var proxyServer = require('../');
 var replaceListPath = path.join(__dirname, 'support', 'replace-list.js');
 
 describe('nproxy', function(){
-  var server;
+  var servers;
+  var httpServer;
+  var httpsServer;
+
   before(function(done){
-    server = proxyServer(undefined, replaceListPath);
+    servers = proxyServer(undefined, replaceListPath);
+    httpServer = servers.httpServer;
+    httpsServer = servers.httpsServer;
     done();
   });
 
@@ -17,7 +22,8 @@ describe('nproxy', function(){
   });
 
   after(function(done){
-    server.close();
+    httpServer.close();
+    httpsServer.close();
     done();
   });
 });
