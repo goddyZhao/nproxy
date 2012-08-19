@@ -19,6 +19,7 @@ I've written a post named [Nproxy: The Mjolnir for UI Developers](http://en.blog
 * Support Mac, Linux and Windows  
 * Support both single file and combo file replacing
 * Support directory mapping with any files
+* Support both HTTP and HTTPS
 
 ## Installation
 
