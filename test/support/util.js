@@ -1,5 +1,6 @@
 var url = require('url');
 var http = require('http');
+var https = require('https');
 var Buffer = require('buffer').Buffer;
 
 var util = {
@@ -7,17 +8,19 @@ var util = {
     var parserdUrl = url.parse(options.url);
     var requestOptions = {
       host: parserdUrl.hostname,
-      port: parserdUrl.port || 80,
+      port: parserdUrl.port || (parserdUrl.protocol === 'http:' ? 80 : 443),
       path: parserdUrl.path.substr(1),
       method: options.method || 'GET'
     };
     var request;
+    var sender;
 
     if(options.headers){
       requestOptions.headers = options.headers;
     }
 
-    request = http.request(requestOptions, function(err, res){
+    sender = parserdUrl.protocol === 'http:' ? http : https;
+    request = sender.request(requestOptions, function(err, res){
       if(err){ callback(err); return; }
       callback(null, res);
     });
@@ -27,8 +30,6 @@ var util = {
     }
 
     request.end();
-
-
   }
 }
 

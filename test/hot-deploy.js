@@ -23,8 +23,10 @@ function validateResponseHeader(res, callback){
 };
 
 describe('nproxy', function(){
-  var tServer;
-  var pServer;
+  var servers;
+  var tHttpServer;
+  var pHttpServer;
+  var pHttpsServer;
   var originRuleContent;
 
   before(function(done){
@@ -32,11 +34,13 @@ describe('nproxy', function(){
       if(!err){
         originRuleContent = bufferData;
 
-        tServer = targetServer();
-        pServer = proxyServer(8989, {
+        tHttpServer = targetServer.createHttpServer();
+        servers = proxyServer(8989, {
           responderListFilePath: replaceListPath
         });
 
+        pHttpServer = servers.httpServer;
+        pHttpsServer = servers.httpsServer;
 
         done();
       }
@@ -64,8 +68,9 @@ describe('nproxy', function(){
   });
 
   after(function(done){
-    tServer.close();
-    pServer.close();
+    tHttpServer.close();
+    pHttpServer.close();
+    pHttpsServer.close();
     fs.writeFile(replaceListPath, originRuleContent, function(err){
       if(!err){
         done();

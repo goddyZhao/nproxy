@@ -35,5 +35,9 @@ module.exports = [
   {
     pattern: 'web/',
     responder: replacedDir
+  },
+  {
+    pattern: 'web/hot-deploy.js',
+    responder: path.join(replacedDir, 'hot-deploy.js')
   }
 ];
