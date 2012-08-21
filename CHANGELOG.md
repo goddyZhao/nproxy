@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.0.7(Stable)
+
+    Support HTTPS
+
 ## v0.0.6
 
     Support directory mapping with any files
