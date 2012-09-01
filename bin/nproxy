@@ -6,9 +6,11 @@ var nproxy = require('../');
 program
   .version('0.0.7')
   .option('-l, --list [list]', 'Specify the replace rule file')
-  .option('-p, --port [port]', 'Specify the port nproxy will listen on', parseInt)
+  .option('-p, --port [port]', 'Specify the port nproxy will listen on(8989 by default)', parseInt)
+  .option('-t, --timeout [timeout]', 'Specify the request timeout(5 seconds by default)', parseInt)
   .parse(process.argv);
 
 nproxy(program.port, {
-  "responderListFilePath": program.list
+  "responderListFilePath": program.list,
+  "timeout": program.timeout
 });
