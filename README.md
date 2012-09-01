@@ -44,6 +44,7 @@ If you don't know how to set proxy for browser, please read this wiki: [How to s
       -V, --version      output the version number
       -l, --list [list]  Specify the replace rule file
       -p, --port [port]  Specify the port nproxy will listen on(8989 by default)
+      -t, --timeout [timeout] Specify the request timeout (5 seconds by default)
 
 ## Template of Replace Rule file(should be a .js file)
 
