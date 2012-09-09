@@ -2,6 +2,8 @@
 
 A cli proxy tool specialized in file replacing
 
+[![Build Status](https://secure.travis-ci.org/goddyZhao/nproxy.png)](http://travis-ci.org/goddyZhao/nproxy)
+
 ## Why nproxy
 
 Maybe you have such question as why nproxy when we have [Fiddler](http://www.fiddler2.com/fiddler2/), [Charles](http://www.charlesproxy.com/), [Rythem](http://www.alloyteam.com/2012/05/web-front-end-tool-rythem-1/) and [Tinyproxy](https://banu.com/tinyproxy/). Yes, there is no doubt that they are all great tools, however they don't meet my requirements:
