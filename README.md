@@ -12,7 +12,7 @@ Maybe you have such question as why nproxy when we have [Fiddler](http://www.fid
 * Support replacing combo files with separated source files
 * Support directory mapping
 
-This is the main reason why nproxy is here. Besides, nproxy can improve the efficient of my daily development for enterprise-level product with a bunch of complex building processes, which cost me lots of time.
+This is the main reason why nproxy is here. Besides, nproxy can improve the efficiency of my daily development for enterprise-level product with a bunch of complex building processes, which cost me lots of time.
 
 I've written a post named [NProxy: The Mjolnir for UI Developers](http://en.blog.goddyzhao.me/post/29470818841/nproxy-the-mjolnir-for-ui-developers)  and a keynote [NProxy: A Sharp Weapon for UI Developers](https://speakerdeck.com/u/goddyzhao/p/nproxy-a-sharp-weapon-for-ui-developers) to explain my reason for developing nproxy in detail.
 
