@@ -4,7 +4,7 @@ var program = require('commander');
 var nproxy = require('../');
 
 program
-  .version('1.1.2')
+  .version('1.2.0')
   .option('-l, --list [list]', 'Specify the replace rule file')
   .option('-p, --port [port]', 'Specify the port nproxy will listen on(8989 by default)', parseInt)
   .option('-t, --timeout [timeout]', 'Specify the request timeout(5 seconds by default)', parseInt)
