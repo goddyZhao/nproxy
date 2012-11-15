@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.3.0(Stable)
+    Improve the performance for https proxy
+    Add timeout handler for both request and response
+    Add regular expression support in responder
+
 ## v0.0.7(Stable)
 
     Support HTTPS
