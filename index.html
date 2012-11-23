@@ -39,23 +39,23 @@
         <ul></ul>
       </nav>
       <section>
-        <h1>nproxy</h1>
+        <h1>NProxy</h1>
 
 <p>A cli proxy tool specialized in file replacing</p>
 
 <p><a href="http://travis-ci.org/goddyZhao/nproxy"><img src="https://secure.travis-ci.org/goddyZhao/nproxy.png" alt="Build Status"></a></p>
 
-<h2>Why nproxy</h2>
+<h2>Why NProxy</h2>
 
-<p>Maybe you have such question as why nproxy when we have <a href="http://www.fiddler2.com/fiddler2/">Fiddler</a>, <a href="http://www.charlesproxy.com/">Charles</a>, <a href="http://www.alloyteam.com/2012/05/web-front-end-tool-rythem-1/">Rythem</a> and <a href="https://banu.com/tinyproxy/">Tinyproxy</a>. Yes, there is no doubt that they are all great tools, however they don't meet my requirements:</p>
+<p>Maybe you have such question as why NProxy when we have <a href="http://www.fiddler2.com/fiddler2/">Fiddler</a>, <a href="http://www.charlesproxy.com/">Charles</a>, <a href="http://www.alloyteam.com/2012/05/web-front-end-tool-rythem-1/">Rythem</a> and <a href="https://banu.com/tinyproxy/">Tinyproxy</a>. Yes, there is no doubt that they are all great tools, however they don't meet my requirements:</p>
 
 <ul>
 <li>Support Mac, Linux and Windows(especially Mac and Linux)</li>
 <li>Support replacing combo files with separated source files</li>
 <li>Support directory mapping</li>
-</ul><p>This is the main reason why nproxy is here. Besides, nproxy can improve the efficiency of my daily development for enterprise-level product with a bunch of complex building processes, which cost me lots of time.</p>
+</ul><p>This is the main reason why NProxy is here. Besides, NProxy can improve the efficiency of my daily development for enterprise-level product with a bunch of complex building processes, which cost me lots of time.</p>
 
-<p>I've written a post named <a href="http://en.blog.goddyzhao.me/post/29470818841/nproxy-the-mjolnir-for-ui-developers">NProxy: The Mjolnir for UI Developers</a>  and a keynote <a href="https://speakerdeck.com/u/goddyzhao/p/nproxy-a-sharp-weapon-for-ui-developers">NProxy: A Sharp Weapon for UI Developers</a> to explain my reason for developing nproxy in detail.</p>
+<p>I've written a post named <a href="http://en.blog.goddyzhao.me/post/29470818841/nproxy-the-mjolnir-for-ui-developers">NProxy: The Mjolnir for UI Developers</a>  and a keynote <a href="https://speakerdeck.com/u/goddyzhao/p/nproxy-a-sharp-weapon-for-ui-developers">NProxy: A Sharp Weapon for UI Developers</a> to explain my reason for developing NProxy in detail.</p>
 
 <h2>Features</h2>
 
@@ -137,6 +137,12 @@ Options:
   {
     pattern: 'ui/homepage/img',  // must be a string
     responder: '/home/goddyzhao/image/' //must be a absolute directory path
+  },
+
+  // 6. Write responder with regular expression variables like $1, $2
+  {
+    pattern: /https?:\/\/[\w\.]*(?::\d+)?\/ui\/(.*)_dev\.(\w+)/,
+    reponder: 'http://localhost/proxy/$1.$2'
   }
 ];
 </code></pre>
@@ -145,11 +151,11 @@ Options:
 
 <h2>Quickly setup rule files for SF project</h2>
 
-<p>For UI Developers from SuccessFactors, here is a bonus for you guys. You can use the <a href="http://goddyzhao.github.com/sf-transfer">sf-transfer</a> tool to transfer the combo xml file to nproxy rule file automatically!</p>
+<p>For UI Developers from SuccessFactors, here is a bonus for you guys. You can use the <a href="http://goddyzhao.github.com/sf-transfer">sf-transfer</a> tool to transfer the combo xml file to NProxy rule file automatically!</p>
 
 <h2>License</h2>
 
-<p>nproxy is available under the terms of the MIT License</p>
+<p>NProxy is available under the terms of the MIT License</p>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/goddyZhao">goddyZhao</a></p>
