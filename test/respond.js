@@ -118,6 +118,17 @@ describe('nproxy', function(){
       })
     });
 
+    it('should map remote dir files request width params to local one with js or css under http', function(done){
+      util.request({
+        url: 'http://localhost:8989/http://localhost:3001/web/js/hello.js?1.0'
+      }, function(res){
+        validateResponseHeader(res, function(err, buffer){
+          res.headers['content-type'].should.equal('application/javascript');
+          buffer.toString().should.equal('hello.js')
+          done();
+        });
+      })
+    });
 
     /**
      * https
