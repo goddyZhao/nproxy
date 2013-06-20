@@ -98,7 +98,7 @@ If you don't know how to set proxy for browser, please read this wiki: [How to s
       // 6. Write responder with regular expression variables like $1, $2
       {
         pattern: /https?:\/\/[\w\.]*(?::\d+)?\/ui\/(.*)_dev\.(\w+)/,
-        reponder: 'http://localhost/proxy/$1.$2'
+        responder: 'http://localhost/proxy/$1.$2'
       }
     ];
 
