@@ -2,9 +2,10 @@
 
 var program = require('commander');
 var nproxy = require('../');
+var conf = require('../package.json');
 
 program
-  .version('1.3.1')
+  .version(conf.version)
   .option('-l, --list [list]', 'Specify the replace rule file')
   .option('-p, --port [port]', 'Specify the port nproxy will listen on(8989 by default)', parseInt)
   .option('-t, --timeout [timeout]', 'Specify the request timeout(5 seconds by default)', parseInt)
