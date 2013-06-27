@@ -39,13 +39,15 @@
         <ul></ul>
       </nav>
       <section>
-        <h1>NProxy</h1>
+        <h1>
+<a name="nproxy" class="anchor" href="#nproxy"><span class="octicon octicon-link"></span></a>NProxy</h1>
 
 <p>A cli proxy tool specialized in file replacing</p>
 
 <p><a href="http://travis-ci.org/goddyZhao/nproxy"><img src="https://secure.travis-ci.org/goddyZhao/nproxy.png" alt="Build Status"></a></p>
 
-<h2>Why NProxy</h2>
+<h2>
+<a name="why-nproxy" class="anchor" href="#why-nproxy"><span class="octicon octicon-link"></span></a>Why NProxy</h2>
 
 <p>Maybe you have such question as why NProxy when we have <a href="http://www.fiddler2.com/fiddler2/">Fiddler</a>, <a href="http://www.charlesproxy.com/">Charles</a>, <a href="http://www.alloyteam.com/2012/05/web-front-end-tool-rythem-1/">Rythem</a> and <a href="https://banu.com/tinyproxy/">Tinyproxy</a>. Yes, there is no doubt that they are all great tools, however they don't meet my requirements:</p>
 
@@ -57,7 +59,8 @@
 
 <p>I've written a post named <a href="http://en.blog.goddyzhao.me/post/29470818841/nproxy-the-mjolnir-for-ui-developers">NProxy: The Mjolnir for UI Developers</a>  and a keynote <a href="https://speakerdeck.com/u/goddyzhao/p/nproxy-a-sharp-weapon-for-ui-developers">NProxy: A Sharp Weapon for UI Developers</a> to explain my reason for developing NProxy in detail.</p>
 
-<h2>Features</h2>
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
 
 <ul>
 <li>Support Mac, Linux and Windows<br>
@@ -65,14 +68,16 @@
 <li>Support both single file and combo file replacing</li>
 <li>Support directory mapping with any files</li>
 <li>Support both HTTP and HTTPS</li>
-</ul><h2>Installation</h2>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <pre><code>npm install -g nproxy (node &gt;= v0.8.x is required)
 </code></pre>
 
 <p>If you are not familiar with Node.js and NPM, you can visit the <a href="https://github.com/goddyZhao/nproxy/wiki/How-to-install-NProxys">How to install NProxy</a> wiki page to get detail information about installation of NProxy</p>
 
-<h2>Usage</h2>
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <pre><code>nproxy -l replace_rule.js 
 
@@ -81,7 +86,8 @@ Setting your browser's proxy to 127.0.0.1:port(8989 by default)
 
 <p>If you don't know how to set proxy for browser, please read this wiki: <a href="https://github.com/goddyZhao/nproxy/wiki/How-to-set-browser's-proxy">How to set brower's proxy</a></p>
 
-<h3>More Options:</h3>
+<h3>
+<a name="more-options" class="anchor" href="#more-options"><span class="octicon octicon-link"></span></a>More Options:</h3>
 
 <pre><code>Usage: nproxy [options]
 
@@ -94,7 +100,8 @@ Options:
   -t, --timeout [timeout] Specify the request timeout (5 seconds by default)
 </code></pre>
 
-<h2>Template of Replace Rule file(should be a .js file)</h2>
+<h2>
+<a name="template-of-replace-rule-fileshould-be-a-js-file" class="anchor" href="#template-of-replace-rule-fileshould-be-a-js-file"><span class="octicon octicon-link"></span></a>Template of Replace Rule file(should be a .js file)</h2>
 
 <pre><code>module.exports = [
 
@@ -142,24 +149,38 @@ Options:
   // 6. Write responder with regular expression variables like $1, $2
   {
     pattern: /https?:\/\/[\w\.]*(?::\d+)?\/ui\/(.*)_dev\.(\w+)/,
-    reponder: 'http://localhost/proxy/$1.$2'
+    responder: 'http://localhost/proxy/$1.$2'
+  },
+
+  // 7. Map server image directory to local image directory with regular expression
+  // This simple rule can replace multiple directories to corresponding locale ones
+  // For Example, 
+  //   http://host:port/ui/a/img/... =&gt; /home/a/image/...
+  //   http://host:port/ui/b/img/... =&gt; /home/b/image/...
+  //   http://host:port/ui/c/img/... =&gt; /home/c/image/...
+  //   ...
+  {
+    pattern: /ui\/(.*)\/img\//,
+    responder: '/home/$1/image/'
   }
 ];
 </code></pre>
 
 <p>You can use the <a href="https://github.com/goddyzhao/nproxy/blob/master/replace-rule.sample.js">template file</a> and replace it with your own configurations. </p>
 
-<h2>Quickly setup rule files for SF project</h2>
+<h2>
+<a name="quickly-setup-rule-files-for-sf-project" class="anchor" href="#quickly-setup-rule-files-for-sf-project"><span class="octicon octicon-link"></span></a>Quickly setup rule files for SF project</h2>
 
 <p>For UI Developers from SuccessFactors, here is a bonus for you guys. You can use the <a href="http://goddyzhao.github.com/sf-transfer">sf-transfer</a> tool to transfer the combo xml file to NProxy rule file automatically!</p>
 
-<h2>License</h2>
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>NProxy is available under the terms of the MIT License</p>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/goddyZhao">goddyZhao</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
