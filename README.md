@@ -99,6 +99,18 @@ If you don't know how to set proxy for browser, please read this wiki: [How to s
       {
         pattern: /https?:\/\/[\w\.]*(?::\d+)?\/ui\/(.*)_dev\.(\w+)/,
         reponder: 'http://localhost/proxy/$1.$2'
+      },
+
+      // 7. Map server image directory to local image directory with regular expression
+      // This simple rule can replace multiple directories to corresponding locale ones
+      // For Example, 
+      //   http://host:port/ui/a/img/... => /home/a/image/...
+      //   http://host:port/ui/b/img/... => /home/b/image/...
+      //   http://host:port/ui/c/img/... => /home/c/image/...
+      //   ...
+      {
+        pattern: /ui\/(.*)\/img\//,
+        responder: '/home/$1/image/'
       }
     ];
 

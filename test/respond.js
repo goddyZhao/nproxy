@@ -32,7 +32,8 @@ describe('nproxy', function(){
       tHttpServer = targetServer.createHttpServer();
       tHttpsServer = targetServer.createHttpsServer();
       servers = proxyServer(8989, {
-        responderListFilePath: replaceListPath
+        responderListFilePath: replaceListPath,
+        debug: true
       });
       pHttpServer = servers.httpServer;
       pHttpsServer = servers.httpsServer;
@@ -128,6 +129,25 @@ describe('nproxy', function(){
           done();
         });
       })
+    });
+
+    it('should map remote dir to local one with regular expression', function(done){
+      util.request({
+        url: 'http://localhost:8989/http://localhost:3001/ui/re/img/avatar.jpg'
+      }, function(res){
+        validateResponseHeader(res, function(err, buffer){
+          res.headers['content-type'].should.equal('image/jpeg');
+
+          util.request({
+            url: 'http://localhost:8989/http://localhost:3001/ui/re/img/avatar2.jpg'
+          }, function(res){
+            validateResponseHeader(res, function(err, buffer){
+              res.headers['content-type'].should.equal('image/jpeg');            
+              done();
+            });
+          });
+        });
+      });
     });
 
 

@@ -31,6 +31,10 @@ module.exports = [
       ]
     }
   },
+  {
+    pattern: /\/ui\/(.*)\/img\//,
+    responder: replacedDir + '/ui/$1/img/'
+  },
 
   {
     pattern: 'web/',
