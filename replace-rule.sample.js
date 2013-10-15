@@ -44,7 +44,7 @@ module.exports = [
   // 6. Write responder with regular expression variables like $1, $2
   {
     pattern: /https?:\/\/[\w\.]*(?::\d+)?\/ui\/(.*)_dev\.(\w+)/,
-    reponder: 'http://localhost/proxy/$1.$2'
+    responder: 'http://localhost/proxy/$1.$2'
   },
 
   // 7. Map server image directory to local image directory with regular expression
