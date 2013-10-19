@@ -1,7 +1,7 @@
 {
   "name": "nproxy",
   "author": "Goddy Zhao <goddy128@gmail.com> (http://goddyzhao.me)",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "A cli proxy tool specialized in file replacing",
   "dependencies": {
     "connect": "2.9.1",
