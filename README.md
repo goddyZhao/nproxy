@@ -27,7 +27,7 @@ I've written a post named [NProxy: The Mjolnir for UI Developers](http://en.blog
 
     npm install -g nproxy (node >= v0.8.x is required)
 
-If you are not familiar with Node.js and NPM, you can visit the [How to install NProxy](https://github.com/goddyZhao/nproxy/wiki/How-to-install-NProxys) wiki page to get detail information about installation of NProxy
+If you are not familiar with Node.js and NPM, you can visit the [How to install NProxy](https://github.com/goddyZhao/nproxy/wiki/How-to-install-NProxy) wiki page to get detail information about installation of NProxy
 
 ## Usage
     
