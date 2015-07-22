@@ -7,7 +7,7 @@ module.exports = function (grunt) {
         argv   = require('yargs').argv;
 
 
-    grunt.registerTask('nproxy', 'start nproxy to proxy local JS and CSS files', function(arg1, arg2) {
+    grunt.registerTask('nproxy', 'start nproxy to proxy local JS and CSS files', function() {
 
         // Grunt should not finish the task
         this.async();
