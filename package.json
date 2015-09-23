@@ -4,17 +4,21 @@
   "version": "1.4.0",
   "description": "A cli proxy tool specialized in file replacing",
   "dependencies": {
-    "connect": "*",
     "commander": "*",
+    "connect": "*",
+    "fs-extra": "^0.24.0",
     "mime": "*",
-    "step": "*"
+    "step": "*",
+    "tunnel-agent": "^0.4.1"
   },
-  "devDependencies":{
+  "devDependencies": {
     "mocha": "*",
     "should": "*"
   },
   "main": "./lib/nproxy",
-  "bin": {"nproxy": "./bin/nproxy"},
+  "bin": {
+    "nproxy": "./bin/nproxy"
+  },
   "scripts": {
     "test": "make test"
   },
