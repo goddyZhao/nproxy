@@ -73,6 +73,15 @@ module.exports = function(options) {
     });
   }
 
+  // Experimental : cache
+  // specify `cache: true` to save web content into a local file
+  // you might want to use a cache folder and add it to `.gitignore`
+  mapping.push({
+    pattern   : /(someURL\.html)/,
+    responder : __dirname + '/cache/$1',
+    cache     : true
+  });
+
   // any other request that doesn't match the rules above will be forwarded
 
   return mapping;

@@ -7,6 +7,7 @@
     "connect": "2.9.1",
     "commander": "*",
     "mime": "*",
+    "mkdirp": "^0.5.1",
     "step": "*"
   },
   "devDependencies":{
