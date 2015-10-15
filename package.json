@@ -8,7 +8,8 @@
     "commander": "*",
     "mime": "*",
     "step": "*",
-    "fancy-log": "^1.1.0"
+    "fancy-log": "^1.1.0",
+    "colors": "^1.1.2"
   },
   "devDependencies":{
     "mocha": "*",
