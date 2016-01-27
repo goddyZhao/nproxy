@@ -111,7 +111,17 @@ If you don't know how to set proxy for browser, please read this wiki: [How to s
       {
         pattern: /ui\/(.*)\/img\//,
         responder: '/home/$1/image/'
+      },
+
+      // 7. Cache http response into local files
+      // For Example,
+      //   http://host/someURL.html => ./cache/someURL.html
+      {
+        pattern   : /host\/(someURL)/,
+        responder : __dirname + '/cache/$1.html',
+        cache     : true
       }
+      
     ];
 
 You can use the [template file](https://github.com/goddyzhao/nproxy/blob/master/replace-rule.sample.js) and replace it with your own configurations. 
