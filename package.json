@@ -5,7 +5,7 @@
     "email": "goddy128@gmail.com",
     "url": "http://goddyzhao.me"
   },
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A cli proxy tool specialized in file replacing",
   "dependencies": {
     "commander": "*",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/stephane-tessier/nproxy.git"
+    "url": "git+https://github.com/stephane-tessier/nproxy.git"
   },
   "keywords": [
     "node.js",
@@ -36,15 +36,5 @@
     "proxy",
     "fiddler"
   ],
-  "license": "MIT",
-  "readme": "# NProxy\n\nA cli proxy tool specialized in file replacing\n\n[![Build Status](https://secure.travis-ci.org/goddyZhao/nproxy.png)](http://travis-ci.org/goddyZhao/nproxy)\n\n## Why NProxy\n\nMaybe you have such question as why NProxy when we have [Fiddler](http://www.fiddler2.com/fiddler2/), [Charles](http://www.charlesproxy.com/), [Rythem](http://www.alloyteam.com/2012/05/web-front-end-tool-rythem-1/) and [Tinyproxy](https://banu.com/tinyproxy/). Yes, there is no doubt that they are all great tools, however they don't meet my requirements:\n\n* Support Mac, Linux and Windows(especially Mac and Linux)\n* Support replacing combo files with separated source files\n* Support directory mapping\n\nThis is the main reason why NProxy is here. Besides, NProxy can improve the efficiency of my daily development for enterprise-level product with a bunch of complex building processes, which cost me lots of time.\n\nI've written a post named [NProxy: The Mjolnir for UI Developers](http://en.blog.goddyzhao.me/post/29470818841/nproxy-the-mjolnir-for-ui-developers)  and a keynote [NProxy: A Sharp Weapon for UI Developers](https://speakerdeck.com/u/goddyzhao/p/nproxy-a-sharp-weapon-for-ui-developers) to explain my reason for developing NProxy in detail.\n\n## Features\n\n* Support Mac, Linux and Windows  \n* Support both single file and combo file replacing\n* Support directory mapping with any files\n* Support both HTTP and HTTPS\n\n## Installation\n\n    npm install -g nproxy (node >= v0.8.x is required)\n\nIf you are not familiar with Node.js and NPM, you can visit the [How to install NProxy](https://github.com/goddyZhao/nproxy/wiki/How-to-install-NProxy) wiki page to get detail information about installation of NProxy\n\n## Usage\n    \n    nproxy -l replace_rule.js \n\n    Setting your browser's proxy to 127.0.0.1:port(8989 by default)\n\nIf you don't know how to set proxy for browser, please read this wiki: [How to set brower's proxy](https://github.com/goddyZhao/nproxy/wiki/How-to-set-browser's-proxy)\n\n\n### More Options:\n\n    Usage: nproxy [options]\n\n    Options:\n\n      -h, --help         output usage information\n      -V, --version      output the version number\n      -l, --list [list]  Specify the replace rule file\n      -p, --port [port]  Specify the port nproxy will listen on(8989 by default)\n      -t, --timeout [timeout] Specify the request timeout (5 seconds by default)\n\n## Template of Replace Rule file(should be a .js file)\n\n    module.exports = [\n\n      // 1. replace single file with local one\n      {\n        pattern: 'homepage.js',      // Match url you wanna replace\n        responder:  \"/home/goddyzhao/workspace/homepage.js\"\n      },\n\n      // 2. replace single file with web file\n      {\n        pattern: 'homepage.js',      // Match url you wanna replace\n        responder:  \"http://www.anotherwebsite.com/assets/js/homepage2.js\"\n      },\n\n      // 3. replace combo file with src with absolute file path\n      {\n        pattern: 'group/homepageTileFramework.*.js', \n        responder: [\n          '/home/goddyzhao/workspace/webapp/ui/homepage/js/a.js',\n          '/home/goddyzhao/workspace/webapp/ui/homepage/js/b.js',\n          '/home/goddyzhao/workspace/webapp/ui/homepage/js/c.js'\n        ] \n      },\n\n      // 4. replace combo file with src with relative file path and specified dir\n      {\n        pattern: 'group/homepageTileFramework.*.js',\n        responder: {\n          dir: '/home/goddyzhao/workspace/webapp/ui/homepage/js',\n          src: [\n            'a.js',\n            'b.js',\n            'c.js'\n          ]\n        }\n      },\n\n      // 5. Map server image directory to local image directory\n      {\n        pattern: 'ui/homepage/img',  // must be a string\n        responder: '/home/goddyzhao/image/' //must be a absolute directory path\n      },\n\n      // 6. Write responder with regular expression variables like $1, $2\n      {\n        pattern: /https?:\\/\\/[\\w\\.]*(?::\\d+)?\\/ui\\/(.*)_dev\\.(\\w+)/,\n        responder: 'http://localhost/proxy/$1.$2'\n      },\n\n      // 7. Map server image directory to local image directory with regular expression\n      // This simple rule can replace multiple directories to corresponding locale ones\n      // For Example, \n      //   http://host:port/ui/a/img/... => /home/a/image/...\n      //   http://host:port/ui/b/img/... => /home/b/image/...\n      //   http://host:port/ui/c/img/... => /home/c/image/...\n      //   ...\n      {\n        pattern: /ui\\/(.*)\\/img\\//,\n        responder: '/home/$1/image/'\n      }\n    ];\n\nYou can use the [template file](https://github.com/goddyzhao/nproxy/blob/master/replace-rule.sample.js) and replace it with your own configurations. \n\n## Quickly setup rule files for SF project\n\nFor UI Developers from SuccessFactors, here is a bonus for you guys. You can use the [sf-transfer](http://goddyzhao.github.com/sf-transfer) tool to transfer the combo xml file to NProxy rule file automatically!\n\n## License\n\nNProxy is available under the terms of the MIT License\n",
-  "readmeFilename": "README.md",
-  "bugs": {
-    "url": "https://github.com/stephane-tessier/nproxy/issues"
-  },
-  "homepage": "https://github.com/stephane-tessier/nproxy",
-  "_id": "nproxy@1.4.3",
-  "_shasum": "c7439108261c1786ff10dac28a50e3c970fc3dfd",
-  "_resolved": "git+https://github.com/stephane-tessier/nproxy#1fc12ce46e63dea3882a2865a67453dd9278b847",
-  "_from": "nproxy@git+https://github.com/stephane-tessier/nproxy"
+  "license": "MIT"
 }
