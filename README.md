@@ -120,6 +120,8 @@ If you don't know how to set proxy for browser, please read this wiki: [How to s
         pattern   : /host\/(someURL)/,
         responder : __dirname + '/cache/$1.html',
         cache     : true
+        // use this if you want to use cache for POST requests also
+        // cachePost : true
       }
       
     ];
