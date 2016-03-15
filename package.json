@@ -5,7 +5,7 @@
     "email": "goddy128@gmail.com",
     "url": "http://goddyzhao.me"
   },
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "A cli proxy tool specialized in file replacing",
   "dependencies": {
     "commander": "*",
