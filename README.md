@@ -122,6 +122,20 @@ If you don't know how to set proxy for browser, please read this wiki: [How to s
         cache     : true
         // use this if you want to use cache for POST requests also
         // cachePost : true
+      },
+      
+      
+      // 8. delay (fix) a response (to simulate network or so)
+      {
+        pattern: 'homepage.js',      // Match url you wanna replace
+        responder:  '/home/goddyzhao/workspace/homepage.js',
+        delay: 2000 // ms
+      },
+      // or
+      {
+        pattern: 'homepage.js',      // Match url you wanna replace
+        responder:  '/home/goddyzhao/workspace/homepage.js',
+        delay: {min: 200, max: 2000} // random delay between 200 and 2000 ms
       }
       
     ];
