@@ -23,12 +23,10 @@ module.exports = function (grunt) {
       };
 
     // OPTIONAL: If you want nproxy requests to be proxyfied
-    options.proxy = {
-      host   : 'proxyhost',                                // mandatory
-      port   : 80,                                         // optional, default to 80
-      auth   : 'login:pass',                               // optional
-      bypass : ['localhost', 'dev.localhost', 'bypass.me'] // optional, default to ['127.0.0.1', 'localhost']
-    };
+    try {
+      var proxyConf = require('./.proxy-auth.json');
+      options.proxy = proxyConf;
+    } catch(e) { }
 
     options.responderListFilePath = require('./nproxy-conf.js')(argv);
 

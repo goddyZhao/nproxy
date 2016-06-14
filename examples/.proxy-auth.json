@@ -1,0 +1,7 @@
+{
+  "protocol" : "http",
+  "host"     : "10.xx.xx.xx",
+  "port"     : 8090,
+  "username" : "johndoe",
+  "password" : "/!\\ PUT THIS FILE IN GITIGNORE"
+}

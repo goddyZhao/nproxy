@@ -10,6 +10,7 @@
   "dependencies": {
     "commander": "*",
     "connect": "2.9.1",
+    "https-proxy-agent": "1.0.0",
     "jsonfile": "^2.2.2",
     "mime": "*",
     "mkdirp": "^0.5.1",
