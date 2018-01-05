@@ -1,0 +1,9 @@
+{
+  "name": "nproxy-grunt-example",
+  "devDependencies": {
+    "nproxy": "stephane-tessier/nproxy",
+    "grunt": "^0.4.5",
+    "gulp": "^3.9.0",
+    "yargs": "^3.15.0"
+  }
+}
