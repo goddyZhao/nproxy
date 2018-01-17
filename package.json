@@ -6,7 +6,7 @@
   "dependencies": {
     "connect": "2.9.1",
     "commander": "*",
-    "mime": "*",
+    "mime": "1.3.4",
     "step": "*"
   },
   "devDependencies":{
